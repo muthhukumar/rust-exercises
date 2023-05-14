@@ -42,10 +42,10 @@ fn update_value_based_on_old_value() {
     let mut i = 0;
 
     for word in text.split_whitespace() {
-        println!("word = {word}");
+        println!("word: {word}");
         i += 1;
         let count = map.entry(word).or_insert(0);
-        println!("count = {count}");
+        println!("count: {count}");
         *count = i;
     }
 
