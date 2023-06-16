@@ -1,0 +1,2 @@
+parent of leaf None
+parent of leaf is Some(Node { value: 20, children: RefCell { value: [Node { value: 5, children: RefCell { value: [] }, parent: RefCell { value: (Weak) } }] }, parent: RefCell { value: (Weak) } })

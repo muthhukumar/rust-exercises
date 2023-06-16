@@ -1,0 +1,32 @@
+fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
+    if x.len() > y.len() {
+        x
+    } else {
+        y
+    }
+}
+
+fn main() {
+    let r;
+
+    let x = 10;
+    r = &x;
+
+    println!("{r}");
+
+    let longest_str = longest("testing", "new testing");
+
+    let long_live_str = "testing";
+
+    let result;
+
+    {
+        let short_live_str = "test";
+
+        result = longest(long_live_str, &short_live_str);
+    }
+
+    println!("{result} {short_live_str}");
+
+    println!("{longest_str}")
+}
