@@ -1,4 +1,5 @@
 use std::io;
+use temperature_converter::*;
 
 fn main() {
     loop {
@@ -32,8 +33,10 @@ fn main() {
         };
 
         match option {
-            1 => println!("{}°F = {}°C", temp, convert_fahrenheit_to_celsius(temp)),
-            2 => println!("{}°C = {}°F", temp, convert_celsius_to_fahrenheit(temp)),
+            1 => {
+                println!("{}°F = {}", temp, Celsius::from(Fahrenheit(temp)))
+            }
+            2 => println!("{}°C = {}", temp, Fahrenheit::from(Celsius(temp))),
             3 => break,
             _ => {
                 println!("Invalid conversion");
@@ -43,12 +46,4 @@ fn main() {
 
         println!("\n")
     }
-}
-
-fn convert_fahrenheit_to_celsius(fahrenheit: f32) -> f32 {
-    (fahrenheit - 32.0) * 5.0 / 9.0
-}
-
-fn convert_celsius_to_fahrenheit(celsius: f32) -> f32 {
-    (celsius * 9.0 / 5.0) + 32.0
 }
